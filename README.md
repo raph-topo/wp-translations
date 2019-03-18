@@ -18,7 +18,10 @@ Edit your `composer.json` file, and add this lines at the following section:
 }
 ```
 
-Customize the languages and language dir to suite your needs.
+Customize the languages and language dir to suite your needs. Here's our list of used languages:
+```
+[ "ca", "da_DK", "de_DE", "en_US", "es_ES", "fi_FI", "fr_FR", "it_IT", "ja_JP", "nb_NO", "nl_NL", "pl_PL", "pt_PT", "ru_RU", "sv_SE", "tr_TR", "zh_CN" ]
+```
 
 Finally run:
 ```
