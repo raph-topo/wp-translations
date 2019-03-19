@@ -6,12 +6,12 @@
     "type": "composer-plugin",
     "authors": [
         {
-            "name": "Bjørn Johansen",
-            "email": "post@bjornjohansen.no"
-        },
-        {
             "name": "Mirai DEV Team",
             "email": "dev@mirai.com"
+        },
+        {
+            "name": "Bjørn Johansen",
+            "email": "post@bjornjohansen.no"
         }
     ],
     "require": {
