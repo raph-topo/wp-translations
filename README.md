@@ -14,13 +14,18 @@ Edit your `composer.json` file, and add this lines at the following section:
 ```
 "extra": {
     "wordpress-languages": [ "en_GB", "nb_NO", "sv_SE" ],
-    "wordpress-language-dir": "web/app/languages"
+    "wordpress-language-dir": "wp-content/languages"
 }
 ```
 
 Customize the languages and language dir to suite your needs. Here's our list of used languages:
 ```
 [ "ca", "da_DK", "de_DE", "en_US", "es_ES", "fi_FI", "fr_FR", "it_IT", "ja_JP", "nb_NO", "nl_NL", "pl_PL", "pt_PT", "ru_RU", "sv_SE", "tr_TR", "zh_CN" ]
+```
+
+Also as we're using [Bedrock](https://roots.io/bedrock/) from the [Roots](https://roots.io/) stack, we should change the wordpress-language-dir to:
+```
+web/app/languages
 ```
 
 Finally run:
