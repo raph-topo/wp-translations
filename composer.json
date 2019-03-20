@@ -23,6 +23,6 @@
         }
     },
     "extra": {
-        "class": "BJ\\Wplang\\Wplang"
+        "class": "Mirai\\Wplang\\Wplang"
     }
 }

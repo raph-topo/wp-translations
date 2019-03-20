@@ -1,6 +1,6 @@
 <?php
 
-namespace BJ\Wplang;
+namespace Mirai\Wplang;
 
 use Composer\Composer;
 use Composer\Script\Event;
