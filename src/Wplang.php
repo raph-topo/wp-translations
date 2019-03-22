@@ -124,13 +124,9 @@ class Wplang implements PluginInterface, EventSubscriberInterface {
 					break;
 			}
 
-			var_dump( $t );
-
 			if ( is_a( $t, __NAMESPACE__ . '\Translatable' ) ) {
 
 				$results = $t->fetch();
-
-				var_dump( $results );
 
 				if ( empty( $results ) ) {
 					$this->io->write( '      - ' . sprintf( 'No translations updated for %s', $package->getName() ) );
