@@ -1,5 +1,11 @@
 # WPLang for Roots
 
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/raph-topo/wplang?sort=semver)
+![License](https://img.shields.io/github/license/raph-topo/wplang)
+![GitHub last commit](https://img.shields.io/github/last-commit/raph-topo/wplang)
+![GitHub issues](https://img.shields.io/github/issues/raph-topo/wplang)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/raph-topo/wplang)
+
 Composer plugin to download translation files for WordPress core, plugins and themes from wordpress.org.
 Optimized for the [Roots](https://roots.io/) stack (Bedrock).
 
