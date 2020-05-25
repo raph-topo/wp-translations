@@ -1,6 +1,6 @@
 <?php
 
-namespace RaphTopo\Wplang;
+namespace RaphTopo\WPTranslations;
 
 use Composer\Composer;
 use Composer\EventDispatcher\EventSubscriberInterface;
@@ -9,7 +9,7 @@ use Composer\Plugin\PluginInterface;
 use Composer\Installer\PackageEvent;
 use Composer\Package\PackageInterface;
 
-class Wplang implements PluginInterface, EventSubscriberInterface
+class WPTranslations implements PluginInterface, EventSubscriberInterface
 {
 
     /**

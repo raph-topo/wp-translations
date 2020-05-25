@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @package RaphTopo\WPlang
+ * @package RaphTopo\WPTranslations
  */
 
-namespace RaphTopo\WPlang;
+namespace RaphTopo\WPTranslations;
 
 /**
  * Class Translatable
  *
- * @package RaphTopo\WPlang
+ * @package RaphTopo\WPTranslations
  */
 class Translatable
 {

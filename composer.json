@@ -17,10 +17,10 @@
     },
     "autoload": {
         "psr-4": {
-            "RaphTopo\\Wplang\\": "src"
+            "RaphTopo\\WPTranslations\\": "src"
         }
     },
     "extra": {
-        "class": "RaphTopo\\Wplang\\Wplang"
+        "class": "RaphTopo\\WPTranslations\\WPTranslations"
     }
 }
