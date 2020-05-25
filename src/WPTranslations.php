@@ -88,7 +88,7 @@ class WPTranslations implements PluginInterface, EventSubscriberInterface
     /**
      * Our callback for the post-package-update event.
      *
-     * @param  PackageEvent $event The package event object.
+     * @param PackageEvent $event The package event object.
      */
     public function postPackageUpdate(PackageEvent $event)
     {
