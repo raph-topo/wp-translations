@@ -118,12 +118,6 @@ class Wplang implements PluginInterface, EventSubscriberInterface
                 case 'wordpress-theme':
                     $t = new Translatable('theme', $name, $package->getVersion(), $this->languages, $this->wpLanguageDir);
                     break;
-                case 'package':
-                case 'wordpress-core':
-                    if ('roots' === $provider && 'wordpress' === $name) {
-                        $t = new Translatable('core', $name, $package->getVersion(), $this->languages, $this->wpLanguageDir);
-                    }
-                    break;
                 case 'wordpress-core':
                     if ('roots' === $provider && 'wordpress' === $name) {
                         $t = new Translatable('core', $name, $package->getVersion(), $this->languages, $this->wpLanguageDir);
