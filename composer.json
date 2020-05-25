@@ -1,10 +1,14 @@
 {
-    "name": "bjornjohansen/wplang",
+    "name": "mirai-wordpress/wplang",
     "description": "Composer plugin to download translation files from wordpress.org",
-    "version": "0.1.1",
+    "version": "0.1.4",
     "license": "GPL-2.0+",
     "type": "composer-plugin",
     "authors": [
+        {
+            "name": "Mirai DEV Team",
+            "email": "dev@mirai.com"
+        },
         {
             "name": "Bjørn Johansen",
             "email": "post@bjornjohansen.no"
@@ -15,10 +19,10 @@
     },
     "autoload": {
         "psr-4": {
-            "BJ\\Wplang\\": "src"
+            "Mirai\\Wplang\\": "src"
         }
     },
     "extra": {
-        "class": "BJ\\Wplang\\Wplang"
+        "class": "Mirai\\Wplang\\Wplang"
     }
 }

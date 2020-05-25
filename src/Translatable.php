@@ -1,14 +1,14 @@
 <?php
 /**
- * @package BJ\WPlang
+ * @package Mirai\WPlang
  */
 
-namespace BJ\WPlang;
+namespace Mirai\WPlang;
 
 /**
  * Class Translatable
  *
- * @package BJ\WPlang
+ * @package Mirai\WPlang
  */
 class Translatable {
 

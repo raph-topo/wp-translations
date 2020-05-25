@@ -1,6 +1,6 @@
 <?php
 
-namespace BJ\Wplang;
+namespace Mirai\Wplang;
 
 use Composer\Composer;
 use Composer\Script\Event;
@@ -63,25 +63,35 @@ class Wplang implements PluginInterface, EventSubscriberInterface {
 	public static function getSubscribedEvents() {
 		return [
 			'post-package-install' => [
-				[ 'onPackageAction', 0 ],
+				[ 'postPackageInstall', 0 ],
 			],
 			'post-package-update' => [
-				[ 'onPackageAction', 0 ],
+				[ 'postPackageUpdate', 0 ],
 			],
 		];
 	}
 
 	/**
-	 * Our callback for the post-package-install|update events.
+	 * Our callback for the post-package-install event.
 	 *
 	 * @param  PackageEvent $event The package event object.
 	 */
-	public function onPackageAction( PackageEvent $event ) {
-        if ( 'update' === $event->getOperation()->getJobType() ) {
-            $package = $event->getOperation()->getTargetPackage();
-        } else {
-            $package = $event->getOperation()->getPackage();
-        }
+	public function postPackageInstall( PackageEvent $event )
+	{
+		$package = $event->getOperation()->getPackage();
+
+		$this->getTranslations( $package );
+	}
+
+	/**
+	 * Our callback for the post-package-update event.
+	 *
+	 * @param  PackageEvent $event The package event object.
+	 */
+	public function postPackageUpdate( PackageEvent $event )
+	{
+		$package = $event->getOperation()->getTargetPackage();
+
 		$this->getTranslations( $package );
 	}
 
@@ -93,7 +103,6 @@ class Wplang implements PluginInterface, EventSubscriberInterface {
 	protected function getTranslations( PackageInterface $package ) {
 
 		try {
-
 			$t = new \stdClass();
 
 			list( $provider, $name ) = explode( '/', $package->getName(), 2 );
@@ -105,8 +114,8 @@ class Wplang implements PluginInterface, EventSubscriberInterface {
 				case 'wordpress-theme':
 					$t = new Translatable( 'theme', $name, $package->getVersion(), $this->languages, $this->wpLanguageDir );
 					break;
-				case 'package':
-					if ( 'johnpbloch' === $provider && 'wordpress' === $name ) {
+				case 'package': case 'wordpress-core':
+					if ( 'roots' === $provider && 'wordpress' === $name ) {
 						$t = new Translatable( 'core', $name, $package->getVersion(), $this->languages, $this->wpLanguageDir );
 					}
 					break;
@@ -133,10 +142,9 @@ class Wplang implements PluginInterface, EventSubscriberInterface {
 				}
 			}
 		} catch ( \Exception $e ) {
-			$this->io->writeError( $e->getMessage() );
+			$this->io->writeError( 'ERROR: ' . $e->getMessage() );
 		}
 
 	}
 
 }
-
