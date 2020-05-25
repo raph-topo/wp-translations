@@ -15,7 +15,7 @@ Edit your `composer.json` file to include:
       }
     ],
     "require": {
-      "raph-topo/wplang": "^0.2"
+      "raph-topo/wplang": "^0.3"
     },
     "extra": {
         "wordpress-languages": [ "fr_FR" ],
