@@ -1,7 +1,7 @@
 {
     "name": "raph-topo/wplang",
     "description": "Composer plugin to download translation files from wordpress.org",
-    "version": "0.1.4",
+    "version": "0.2.0",
     "license": "GPL-3.0+",
     "type": "composer-plugin",
     "authors": [
