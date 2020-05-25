@@ -1,5 +1,5 @@
 {
-    "name": "raph-topo/wplang",
+    "name": "raph-topo/wp-translations",
     "description": "Composer plugin to download translation files from wordpress.org",
     "version": "1.0.0",
     "license": "GPL-3.0+",
@@ -10,14 +10,6 @@
             "email": "raph-topo@posteo.net",
             "homepage": "https://github.com/raph-topo",
             "role": "owner"
-        },
-        {
-            "name": "Mirai DEV Team",
-            "email": "dev@mirai.com"
-        },
-        {
-            "name": "Bjørn Johansen",
-            "email": "post@bjornjohansen.no"
         }
     ],
     "require": {
