@@ -10,20 +10,18 @@ Composer plugin to download translation files for WordPress core, plugins and th
 
 Optimized for the [Roots](https://roots.io/) stack, particularly Bedrock, but can be adapted to other setups based on Composer.
 
+Instructions are given relative to the Bedrock root folder, usually `site`.
+
 ## Installation
 
-Edit your `composer.json` file to include:
+Install with:
+```bash
+$ composer require raph-topo/wp-translations
+```
+
+Set the following options in `composer.json`:
 ```json
 {
-    "repositories": [
-      {
-        "type": "vcs",
-        "url": "https://github.com/raph-topo/wplang"
-      }
-    ],
-    "require": {
-      "raph-topo/wplang": "^1.0"
-    },
     "extra": {
         "wordpress-languages": [ "fr_FR" ],
         "wordpress-language-dir": "web/app/languages"
@@ -31,7 +29,7 @@ Edit your `composer.json` file to include:
 }
 ```
 
-Composer will try to pull down translations for all your packages from wordpress.org every time you install or update a package.
+Composer will try to install translations from wordpress.org every time you install or update a package.
 
 To force-update translations for already installed packages, delete the following folders:
 - `web/app/plugins` — except `web/app/plugins/.gitkeep`
