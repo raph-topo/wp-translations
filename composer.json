@@ -1,5 +1,5 @@
 {
-    "name": "mirai-wordpress/wplang",
+    "name": "raph-topo/wplang",
     "description": "Composer plugin to download translation files from wordpress.org",
     "version": "0.1.4",
     "license": "GPL-2.0+",
