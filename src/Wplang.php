@@ -1,6 +1,6 @@
 <?php
 
-namespace Mirai\Wplang;
+namespace RaphTopo\Wplang;
 
 use Composer\Composer;
 use Composer\EventDispatcher\EventSubscriberInterface;

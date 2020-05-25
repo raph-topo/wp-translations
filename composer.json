@@ -19,10 +19,10 @@
     },
     "autoload": {
         "psr-4": {
-            "Mirai\\Wplang\\": "src"
+            "RaphTopo\\Wplang\\": "src"
         }
     },
     "extra": {
-        "class": "Mirai\\Wplang\\Wplang"
+        "class": "RaphTopo\\Wplang\\Wplang"
     }
 }

@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @package Mirai\WPlang
+ * @package RaphTopo\WPlang
  */
 
-namespace Mirai\WPlang;
+namespace RaphTopo\WPlang;
 
 /**
  * Class Translatable
  *
- * @package Mirai\WPlang
+ * @package RaphTopo\WPlang
  */
 class Translatable
 {
