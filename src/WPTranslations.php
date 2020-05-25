@@ -24,7 +24,7 @@ class WPTranslations implements PluginInterface, EventSubscriberInterface
      *
      * @var string
      */
-    protected $wpLanguageDir = '';
+    protected $wpLanguagesDir = '';
 
     /**
      * @var Composer
@@ -51,12 +51,12 @@ class WPTranslations implements PluginInterface, EventSubscriberInterface
 
         $extra = $this->composer->getPackage()->getExtra();
 
-        if (!empty($extra['wordpress-languages'])) {
-            $this->languages = $extra['wordpress-languages'];
+        if (!empty($extra['wordpress-translations'])) {
+            $this->languages = $extra['wordpress-translations'];
         }
 
-        if (!empty($extra['wordpress-language-dir'])) {
-            $this->wpLanguageDir = dirname(dirname(dirname(dirname(__DIR__)))) . '/' . $extra['wordpress-language-dir'];
+        if (!empty($extra['wordpress-languages-dir'])) {
+            $this->wpLanguagesDir = dirname(dirname(dirname(dirname(__DIR__)))) . '/' . $extra['wordpress-languages-dir'];
         }
     }
 
@@ -123,14 +123,14 @@ class WPTranslations implements PluginInterface, EventSubscriberInterface
 
             switch ($package->getType()) {
                 case 'wordpress-plugin':
-                    $t = new Translatable('plugin', $name, $package->getVersion(), $this->languages, $this->wpLanguageDir);
+                    $t = new Translatable('plugin', $name, $package->getVersion(), $this->languages, $this->wpLanguagesDir);
                     break;
                 case 'wordpress-theme':
-                    $t = new Translatable('theme', $name, $package->getVersion(), $this->languages, $this->wpLanguageDir);
+                    $t = new Translatable('theme', $name, $package->getVersion(), $this->languages, $this->wpLanguagesDir);
                     break;
                 case 'wordpress-core':
                     if ('roots' === $provider && 'wordpress' === $name) {
-                        $t = new Translatable('core', $name, $package->getVersion(), $this->languages, $this->wpLanguageDir);
+                        $t = new Translatable('core', $name, $package->getVersion(), $this->languages, $this->wpLanguagesDir);
                     }
                     break;
 

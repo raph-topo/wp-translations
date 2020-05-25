@@ -23,8 +23,8 @@ Set the following options in `composer.json`:
 ```json
 {
     "extra": {
-        "wordpress-languages": [ "fr_FR" ],
-        "wordpress-language-dir": "web/app/languages"
+        "wordpress-translations": [ "fr_FR" ],
+        "wordpress-languages-dir": "web/app/languages"
     }
 }
 ```

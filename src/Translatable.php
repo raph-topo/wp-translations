@@ -47,7 +47,7 @@ class Translatable
      *
      * @var string
      */
-    protected $wpLanguageDir;
+    protected $wpLanguagesDir;
 
     /**
      * Array of translation packs available in our languages.
@@ -59,20 +59,20 @@ class Translatable
     /**
      * Constructor.
      *
-     * @param string $type          The package type: 'plugin', 'theme' or 'core'.
-     * @param string $slug          The plugin/theme slug, E.g. 'query-monitor'. In case of core, this is 'wordpress'.
-     * @param string $version       The package version.
-     * @param string $languages     Array of the languages we are using.
-     * @param string $wpLanguageDir Full path to the language files target directory.
+     * @param string $type           The package type: 'plugin', 'theme' or 'core'.
+     * @param string $slug           The plugin/theme slug, E.g. 'query-monitor'. In case of core, this is 'wordpress'.
+     * @param string $version        The package version.
+     * @param string $languages      Array of the languages we are using.
+     * @param string $wpLanguagesDir Full path to the language files target directory.
      */
-    public function __construct($type, $slug, $version, $languages, $wpLanguageDir)
+    public function __construct($type, $slug, $version, $languages, $wpLanguagesDir)
     {
 
         $this->type          = $type;
         $this->slug          = $slug;
         $this->version       = $version;
         $this->languages     = $languages;
-        $this->wpLanguageDir = $wpLanguageDir;
+        $this->wpLanguagesDir = $wpLanguagesDir;
 
         try {
             $this->translations = $this->getAvailableTranslations();
@@ -157,7 +157,7 @@ class Translatable
      */
     public function getDestPath(): string
     {
-        $destPath = $this->wpLanguageDir;
+        $destPath = $this->wpLanguagesDir;
 
         switch ($this->type) {
             case 'plugin':
