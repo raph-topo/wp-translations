@@ -1,10 +1,13 @@
 # WP Translations
 
+![Packagist Version](https://img.shields.io/packagist/v/raph-topo/wp-translations)
+![Packagist Stars](https://img.shields.io/packagist/stars/raph-topo/wp-translations)
+![Packagist Downloads](https://img.shields.io/packagist/dt/raph-topo/wp-translations)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/raph-topo/wp-translations?sort=semver)
-![License](https://img.shields.io/github/license/raph-topo/wp-translations)
 ![GitHub last commit](https://img.shields.io/github/last-commit/raph-topo/wp-translations)
 ![GitHub issues](https://img.shields.io/github/issues/raph-topo/wp-translations)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/raph-topo/wp-translations)
+![License](https://img.shields.io/github/license/raph-topo/wp-translations)
 
 Composer plugin to download translation files for WordPress core, plugins and themes from wordpress.org.
 
