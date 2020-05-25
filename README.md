@@ -33,7 +33,7 @@ Edit your `composer.json` file to include:
 Composer will try to pull down translations for all your packages from wordpress.org every time you install or update a package.
 
 To force-update translations for already installed packages, delete the following folders:
-- `web/app/plugins` — except `vendor/.gitkeep`
+- `web/app/plugins` — except `web/app/plugins/.gitkeep`
 - `web/app/languages`
 
 Then, run:
