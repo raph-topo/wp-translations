@@ -183,6 +183,7 @@ class Translatable
      * Unpack the downloaded translation ZIP file in the destination directory.
      *
      * @param string $tmpZipFileName Path to the translation ZIP file.
+     * 
      * @return bool Whether the operation was successful or not.
      *
      * @throws \Exception
@@ -215,6 +216,7 @@ class Translatable
      * Download and extract the translation ZIP file in our destination directory.
      *
      * @param string $packageUrl The URL to the translation package ZIP file.
+     * 
      * @return bool Whether the operation was successful or not.
      */
     public function installTranslation($packageUrl): bool

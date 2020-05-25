@@ -38,6 +38,11 @@ class WPTranslations implements PluginInterface, EventSubscriberInterface
 
     /**
      * Composer plugin activation.
+     *
+     * @param Composer $composer
+     * @param IOInterface $io
+     *
+     * @return void
      */
     public function activate(Composer $composer, IOInterface $io)
     {
@@ -76,7 +81,9 @@ class WPTranslations implements PluginInterface, EventSubscriberInterface
     /**
      * Our callback for the post-package-install event.
      *
-     * @param  PackageEvent $event The package event object.
+     * @param PackageEvent $event The package event object.
+     * 
+     * @return void
      */
     public function postPackageInstall(PackageEvent $event)
     {
@@ -89,6 +96,8 @@ class WPTranslations implements PluginInterface, EventSubscriberInterface
      * Our callback for the post-package-update event.
      *
      * @param PackageEvent $event The package event object.
+     * 
+     * @return void
      */
     public function postPackageUpdate(PackageEvent $event)
     {
@@ -101,6 +110,8 @@ class WPTranslations implements PluginInterface, EventSubscriberInterface
      * Get translations for a package, where applicable.
      *
      * @param PackageInterface $package
+     * 
+     * @return void
      */
     protected function getTranslations(PackageInterface $package)
     {
