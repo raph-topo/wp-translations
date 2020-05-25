@@ -29,16 +29,17 @@ Set the following options in `composer.json`:
 }
 ```
 
-Composer will try to install translations from wordpress.org every time you install or update a package.
+The [Translate WordPress](https://make.wordpress.org/polyglots/teams/) page lists available locales (column *WP Locale*)
 
-To force-update translations for already installed packages, delete the following folders:
-- `web/app/plugins` — except `web/app/plugins/.gitkeep`
-- `web/app/languages`
+## Usage
 
-Then, run:
-```bash
-$ composer install
-```
+### Behaviour
+
+Composer will try to install translations from through the WordPress.org API every time you install or update a package.
+
+### Extant projects
+
+To force-update translations for already installed packages, delete the contents of `web/app/plugins` (keep any `.gitkeep`) and run `composer install`
 
 ## Credits
 
