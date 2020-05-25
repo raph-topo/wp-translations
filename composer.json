@@ -6,6 +6,12 @@
     "type": "composer-plugin",
     "authors": [
         {
+            "name": "Raphael",
+            "email": "raph-topo@posteo.net",
+            "homepage": "https://github.com/raph-topo",
+            "role": "owner"
+        },
+        {
             "name": "Mirai DEV Team",
             "email": "dev@mirai.com"
         },
