@@ -3,7 +3,6 @@
 namespace Mirai\Wplang;
 
 use Composer\Composer;
-use Composer\Script\Event;
 use Composer\EventDispatcher\EventSubscriberInterface;
 use Composer\IO\IOInterface;
 use Composer\Plugin\PluginInterface;
