@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: "composer"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    assignees:
+      - raph-topo
+    commit-message:
+      prefix: "Composer update"
+      include: "scope"
+    target-branch: "master"
+    versioning-strategy: increase
