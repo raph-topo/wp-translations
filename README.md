@@ -38,7 +38,7 @@ The [Translate WordPress](https://make.wordpress.org/polyglots/teams/) page list
 
 Composer will try to install translations from through the WordPress.org API every time you install or update a package — for this package only.
 
-**Commit the translation files** (`web/app/languages/{themes,plugins)/*{.mo,.po}`) and deploy them to staging and production.
+**Commit the translation files** (`web/app/languages/{.,themes,plugins}/*{.mo,.po}`) and deploy them to staging and production.
 
 ## Extant projects
 
