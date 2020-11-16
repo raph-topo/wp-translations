@@ -42,6 +42,8 @@ Composer will try to install translations from through the WordPress.org API eve
 
 **Commit the translation files** (`web/app/languages/{.,themes,plugins}/*{.mo,.po}`) and deploy them to staging and production.
 
+From time to time, you might want to get rid of old translation files (plugins that were uninstalled, etc.) To do that, you must delete `web/app/languages` and follow _Extant projects_ hereunder.
+
 ## Extant projects
 
 To force-update translations for already installed packages, delete the contents of the following folders:
