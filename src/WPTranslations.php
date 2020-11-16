@@ -1,4 +1,13 @@
 <?php
+/**
+ * WPTranslations
+ * 
+ * @category ComposerPlugin
+ * @package  RaphTopo\WPTranslations
+ * @author   Raphael <raph-topo@posteo.net>
+ * @license  GPL-3.0 https://github.com/raph-topo/wp-translations/blob/master/LICENSE
+ * @link     https://github.com/raph-topo/wp-translations
+ */
 
 namespace RaphTopo\WPTranslations;
 
@@ -9,6 +18,17 @@ use Composer\Plugin\PluginInterface;
 use Composer\Installer\PackageEvent;
 use Composer\Package\PackageInterface;
 
+/**
+ * WPTranslations
+ * 
+ * Main plugin logic.
+ * 
+ * @category ComposerPlugin
+ * @package  RaphTopo\WPTranslations
+ * @author   Raphael <raph-topo@posteo.net>
+ * @license  GPL-3.0 https://github.com/raph-topo/wp-translations/blob/master/LICENSE
+ * @link     https://github.com/raph-topo/wp-translations
+ */
 class WPTranslations implements PluginInterface, EventSubscriberInterface
 {
 
@@ -27,11 +47,15 @@ class WPTranslations implements PluginInterface, EventSubscriberInterface
     protected $wpLanguagesDir = '';
 
     /**
+     * Composer.
+     * 
      * @var Composer
      */
     protected $composer;
 
     /**
+     * IOInterface.
+     * 
      * @var IOInterface
      */
     protected $io;
@@ -39,8 +63,8 @@ class WPTranslations implements PluginInterface, EventSubscriberInterface
     /**
      * Composer plugin activation.
      *
-     * @param Composer $composer
-     * @param IOInterface $io
+     * @param Composer    $composer Composer
+     * @param IOInterface $io       IOInterface
      *
      * @return void
      */
@@ -109,7 +133,7 @@ class WPTranslations implements PluginInterface, EventSubscriberInterface
     /**
      * Get translations for a package, where applicable.
      *
-     * @param PackageInterface $package
+     * @param PackageInterface $package PackageInterface
      * 
      * @return void
      */

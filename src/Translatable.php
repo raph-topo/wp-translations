@@ -1,7 +1,12 @@
 <?php
-
 /**
- * @package RaphTopo\WPTranslations
+ * WPTranslations
+ * 
+ * @category ComposerPlugin
+ * @package  RaphTopo\WPTranslations
+ * @author   Raphael <raph-topo@posteo.net>
+ * @license  GPL-3.0 https://github.com/raph-topo/wp-translations/blob/master/LICENSE
+ * @link     https://github.com/raph-topo/wp-translations
  */
 
 namespace RaphTopo\WPTranslations;
@@ -9,7 +14,11 @@ namespace RaphTopo\WPTranslations;
 /**
  * Class Translatable
  *
- * @package RaphTopo\WPTranslations
+ * @category ComposerPlugin
+ * @package  RaphTopo\WPTranslations
+ * @author   Raphael <raph-topo@posteo.net>
+ * @license  GPL-3.0 https://github.com/raph-topo/wp-translations/blob/master/LICENSE
+ * @link     https://github.com/raph-topo/wp-translations
  */
 class Translatable
 {
