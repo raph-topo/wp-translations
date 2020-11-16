@@ -80,7 +80,7 @@ class WPTranslations implements PluginInterface, EventSubscriberInterface
         }
 
         if (!empty($extra['wordpress-languages-dir'])) {
-            $this->wpLanguagesDir = dirname(dirname(dirname(dirname(__DIR__)))) . '/' . $extra['wordpress-languages-dir'];
+            $this->wpLanguagesDir = dirname($composer->getConfig()->get('vendor-dir'))  . '/' . $extra['wordpress-languages-dir'];
         }
     }
 
