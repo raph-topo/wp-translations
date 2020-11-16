@@ -24,7 +24,7 @@ Install with:
 $ composer require raph-topo/wp-translations
 ```
 
-Set the following options in `composer.json`:
+Add the following settings to `composer.json`:
 ```json
 {
     "extra": {
@@ -44,7 +44,12 @@ Composer will try to install translations from through the WordPress.org API eve
 
 ## Extant projects
 
-To force-update translations for already installed packages, delete the contents of `web/app/plugins` (keep any `.gitkeep`) and run `composer install`
+To force-update translations for already installed packages, delete the contents of the following folders:
+
+- `web/wp`
+- `web/app/plugins`, except the file `web/app/plugins/.gitkeep`
+
+Run `composer update`.
 
 ## Credits
 
