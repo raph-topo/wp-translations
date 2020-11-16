@@ -61,7 +61,7 @@ class WPTranslations implements PluginInterface, EventSubscriberInterface
     protected $io;
 
     /**
-     * Composer plugin activation.
+     * Apply plugin modifications to Composer
      *
      * @param Composer    $composer Composer
      * @param IOInterface $io       IOInterface
