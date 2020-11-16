@@ -13,6 +13,8 @@ Composer plugin to download translation files for WordPress core, plugins and th
 
 Optimized for the [Roots](https://roots.io/) stack, particularly Bedrock, but can be adapted to other setups based on Composer.
 
+Supports Composer v2 (only).
+
 Instructions are given relative to the Bedrock root folder, usually `site`.
 
 ## Installation
@@ -46,4 +48,4 @@ To force-update translations for already installed packages, delete the contents
 
 ## Credits
 
-This package was started by [Angry Creative](https://github.com/Angrycreative/composer-plugin-language-update), has been rewritten by [Bjørn Johansen](https://github.com/bjornjohansen/wplang) and integrates compatibility changes made by [Mirai](https://github.com/mirai-wordpress/wplang).
+This package was started by [Angry Creative](https://github.com/Angrycreative/composer-plugin-language-update), has been rewritten by [Bjørn Johansen](https://github.com/bjornjohansen/wplang), integrates compatibility changes made by [Mirai](https://github.com/mirai-wordpress/wplang) and was updated to support Composer v2.
