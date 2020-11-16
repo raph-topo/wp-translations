@@ -167,15 +167,24 @@ class WPTranslations implements PluginInterface, EventSubscriberInterface
                 $results = $t->fetch();
 
                 if (empty($results)) {
-                    $this->io->write('      - ' . sprintf('No translations updated for %s', $package->getName()));
+                    $this->io->writeError(
+                        '  - Translations of <info>' . $package->getName(). '</info>: ' 
+                        . 'Already up to date'
+                    );
                 } else {
                     foreach ($results as $result) {
-                        $this->io->write('      - ' . sprintf('Updated translation to %1$s for %2$s', $result, $package->getName()));
+                        $this->io->writeError(
+                            '  - Translations of <info>' . $package->getName(). '</info>: ' 
+                            . 'Downloaded <comment>' . $result . '</comment>'
+                        );
                     }
                 }
             }
         } catch (\Exception $e) {
-            $this->io->writeError('      - ' . 'ERROR: ' . $e->getMessage());
+            $this->io->writeError(
+                '  - Translations of <info>' . $package->getName(). '</info>: ' 
+                . '<error> ' . $e->getMessage() . ' </error>'
+            );
         }
     }
 
