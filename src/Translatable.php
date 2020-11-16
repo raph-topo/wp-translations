@@ -91,20 +91,20 @@ class Translatable
     {
 
         switch ($this->type) {
-            case 'plugin':
-                $url = sprintf('https://api.wordpress.org/translations/plugins/1.0/?slug=%s&version=%s', $this->slug, $this->version);
-                break;
+        case 'plugin':
+            $url = sprintf('https://api.wordpress.org/translations/plugins/1.0/?slug=%s&version=%s', $this->slug, $this->version);
+            break;
 
-            case 'theme':
-                $url = sprintf('https://api.wordpress.org/translations/themes/1.0/?slug=%s&version=%s', $this->slug, $this->version);
-                break;
+        case 'theme':
+            $url = sprintf('https://api.wordpress.org/translations/themes/1.0/?slug=%s&version=%s', $this->slug, $this->version);
+            break;
 
-            case 'core':
-                $url = sprintf('https://api.wordpress.org/translations/core/1.0/?version=%s', $this->version);
-                break;
+        case 'core':
+            $url = sprintf('https://api.wordpress.org/translations/core/1.0/?version=%s', $this->version);
+            break;
 
-            default:
-                throw new \Exception('Unknown package type');
+        default:
+            throw new \Exception('Unknown package type');
         }
 
         $body = file_get_contents($url);
@@ -160,13 +160,13 @@ class Translatable
         $destPath = $this->wpLanguagesDir;
 
         switch ($this->type) {
-            case 'plugin':
-                $destPath .= '/plugins';
-                break;
+        case 'plugin':
+            $destPath .= '/plugins';
+            break;
 
-            case 'theme':
-                $destPath .= '/themes';
-                break;
+        case 'theme':
+            $destPath .= '/themes';
+            break;
         }
 
         if (!is_dir($destPath)) {

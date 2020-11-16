@@ -122,20 +122,20 @@ class WPTranslations implements PluginInterface, EventSubscriberInterface
             list($provider, $name) = explode('/', $package->getName(), 2);
 
             switch ($package->getType()) {
-                case 'wordpress-plugin':
-                    $t = new Translatable('plugin', $name, $package->getVersion(), $this->languages, $this->wpLanguagesDir);
-                    break;
-                case 'wordpress-theme':
-                    $t = new Translatable('theme', $name, $package->getVersion(), $this->languages, $this->wpLanguagesDir);
-                    break;
-                case 'wordpress-core':
-                    if ('roots' === $provider && 'wordpress' === $name) {
-                        $t = new Translatable('core', $name, $package->getVersion(), $this->languages, $this->wpLanguagesDir);
-                    }
-                    break;
+            case 'wordpress-plugin':
+                $t = new Translatable('plugin', $name, $package->getVersion(), $this->languages, $this->wpLanguagesDir);
+                break;
+            case 'wordpress-theme':
+                $t = new Translatable('theme', $name, $package->getVersion(), $this->languages, $this->wpLanguagesDir);
+                break;
+            case 'wordpress-core':
+                if ('roots' === $provider && 'wordpress' === $name) {
+                    $t = new Translatable('core', $name, $package->getVersion(), $this->languages, $this->wpLanguagesDir);
+                }
+                break;
 
-                default:
-                    break;
+            default:
+                break;
             }
 
             if (is_a($t, __NAMESPACE__ . '\Translatable')) {
