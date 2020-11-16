@@ -29,7 +29,7 @@ Set the following options in `composer.json`:
 {
     "extra": {
         "wordpress-translations": [ "fr_FR" ],
-        "wordpress-languages-dir": "web/app/languages"
+        "wordpress-translations-dir": "web/app/languages"
     }
 }
 ```
