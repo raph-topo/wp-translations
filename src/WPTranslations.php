@@ -167,10 +167,7 @@ class WPTranslations implements PluginInterface, EventSubscriberInterface
                 $results = $t->fetch();
 
                 if (empty($results)) {
-                    $this->io->writeError(
-                        '  - Translations of <info>' . $package->getName(). '</info>: ' 
-                        . 'Already up to date'
-                    );
+                    throw new \Exception('No translations available for our languages');
                 } else {
                     foreach ($results as $result) {
                         $this->io->writeError(
