@@ -19,11 +19,6 @@ Instructions are given relative to the Bedrock root folder, usually `site`.
 
 ## Installation
 
-Install with:
-```bash
-$ composer require raph-topo/wp-translations
-```
-
 Add the following settings to `composer.json`:
 ```json
 {
@@ -35,6 +30,11 @@ Add the following settings to `composer.json`:
 ```
 
 The [Translate WordPress](https://make.wordpress.org/polyglots/teams/) page lists available locales (column *WP Locale*)
+
+Install WP Translations with:
+```bash
+$ composer require raph-topo/wp-translations
+```
 
 ## Usage
 
