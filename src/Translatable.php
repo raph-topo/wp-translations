@@ -120,7 +120,7 @@ class Translatable
         $res = json_decode($body);
 
         if (!isset($res->translations) || empty($res->translations)) {
-            throw new \Exception('No translations found');
+            throw new \Exception('No translations available at all');
         }
 
         $translations = [];
@@ -181,7 +181,7 @@ class Translatable
         if (!is_dir($destPath)) {
             $result = mkdir($destPath, 0775, true);
             if (!$result) {
-                throw new \Exception('Failed to create directory at: ' . $destPath);
+                throw new \Exception('Failed to create directory ' . $destPath);
             }
         }
 
@@ -207,15 +207,15 @@ class Translatable
         if (true === $zip->open($tmpZipFileName)) {
             for ($i = 0; $i < $zip->numFiles; $i++) {
                 $ok = $zip->extractTo($destPath, [$zip->getNameIndex($i)]);
-                if (false === $ok) {
-                    throw new \Exception('There was an error moving the translation to the destination directory');
+                if ($ok === false) {
+                    throw new \Exception('Could not unzip to destination directory');
                 }
             }
             $zip->close();
 
             $result = true;
         } else {
-            throw new \Exception('The was an error unzipping the translation files');
+            throw new \Exception('Could not read ZIP file');
         }
 
         return $result;
@@ -239,8 +239,11 @@ class Translatable
             if ($result) {
                 $result = $this->unpackTranslation($tmpZipFileName);
                 unlink($tmpZipFileName);
+            } else {
+                throw new \Exception('Could not download translation files');
             }
         } catch (\Exception $e) {
+            throw new \Exception($e->getMessage());
         }
 
         return $result;

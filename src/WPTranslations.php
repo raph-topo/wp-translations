@@ -61,7 +61,7 @@ class WPTranslations implements PluginInterface, EventSubscriberInterface
     protected $io;
 
     /**
-     * Composer plugin activation.
+     * Apply plugin modifications to Composer
      *
      * @param Composer    $composer Composer
      * @param IOInterface $io       IOInterface
@@ -73,14 +73,23 @@ class WPTranslations implements PluginInterface, EventSubscriberInterface
         $this->composer = $composer;
         $this->io = $io;
 
-        $extra = $this->composer->getPackage()->getExtra();
-
-        if (!empty($extra['wordpress-translations'])) {
-            $this->languages = $extra['wordpress-translations'];
+        try {
+            $languages = $this->composer->getPackage()->getExtra()['wordpress-translations'];
+            $targetDir = $this->composer->getPackage()->getExtra()['wordpress-translations-dir'];
+        } catch (\Exception $e) {
+            
         }
 
-        if (!empty($extra['wordpress-languages-dir'])) {
-            $this->wpLanguagesDir = dirname(dirname(dirname(dirname(__DIR__)))) . '/' . $extra['wordpress-languages-dir'];
+        if (empty($languages)) {
+            throw new \Exception('WP Translations requires \'wordpress-translations\' to be set: see Readme');
+        } else {
+            $this->languages = $languages;
+        }
+
+        if (empty($targetDir)) {
+            throw new \Exception('WP Translations requires \'wordpress-translations-dir\' to be set: see Readme');
+        } else {
+            $this->wpLanguagesDir = dirname($composer->getConfig()->get('vendor-dir'))  . '/' . $targetDir;        
         }
     }
 
@@ -167,15 +176,55 @@ class WPTranslations implements PluginInterface, EventSubscriberInterface
                 $results = $t->fetch();
 
                 if (empty($results)) {
-                    $this->io->write('    Translations were up to date');
+                    throw new \Exception('No translations available for our languages');
                 } else {
                     foreach ($results as $result) {
-                        $this->io->write('    Updated translations to ' . $result);
+                        $this->io->writeError(
+                            '  - Translations of <info>' . $package->getName(). '</info>: ' 
+                            . 'Downloaded <comment>' . $result . '</comment>'
+                        );
                     }
                 }
             }
         } catch (\Exception $e) {
-            $this->io->writeError('    ' . $e->getMessage());
+            $this->io->writeError(
+                '  - Translations of <info>' . $package->getName(). '</info>: ' 
+                . '<error> ' . $e->getMessage() . ' </error>'
+            );
         }
+    }
+
+    /**
+     * Remove any hooks from Composer
+     *
+     * This will be called when a plugin is deactivated before being
+     * uninstalled, but also before it gets upgraded to a new version
+     * so the old one can be deactivated and the new one activated.
+     *
+     * @param Composer    $composer Composer
+     * @param IOInterface $io       IOInterface
+     * 
+     * @return void
+     */
+    public function deactivate(Composer $composer, IOInterface $io)
+    {
+        $composer;
+        $io;
+    }
+
+    /**
+     * Prepare the plugin to be uninstalled
+     *
+     * This will be called after deactivate.
+     *
+     * @param Composer    $composer Composer
+     * @param IOInterface $io       IOInterface
+     * 
+     * @return void
+     */
+    public function uninstall(Composer $composer, IOInterface $io)
+    {
+        $composer;
+        $io;
     }
 }

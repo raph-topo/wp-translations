@@ -12,7 +12,7 @@
         }
     ],
     "require": {
-        "composer-plugin-api": "^1.1"
+        "composer-plugin-api": "^2.0"
     },
     "autoload": {
         "psr-4": {
@@ -21,5 +21,8 @@
     },
     "extra": {
         "class": "RaphTopo\\WPTranslations\\WPTranslations"
+    },
+    "require-dev": {
+        "composer/composer": "^2.0"
     }
 }

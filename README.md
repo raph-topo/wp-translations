@@ -13,6 +13,8 @@ Composer plugin to download translation files for WordPress core, plugins and th
 
 Optimized for the [Roots](https://roots.io/) stack, particularly Bedrock, but can be adapted to other setups based on Composer.
 
+Supports Composer v2 (only).
+
 Instructions are given relative to the Bedrock root folder, usually `site`.
 
 ## Installation
@@ -22,12 +24,12 @@ Install with:
 $ composer require raph-topo/wp-translations
 ```
 
-Set the following options in `composer.json`:
+Add the following settings to `composer.json`:
 ```json
 {
     "extra": {
         "wordpress-translations": [ "fr_FR" ],
-        "wordpress-languages-dir": "web/app/languages"
+        "wordpress-translations-dir": "web/app/languages"
     }
 }
 ```
@@ -40,10 +42,17 @@ Composer will try to install translations from through the WordPress.org API eve
 
 **Commit the translation files** (`web/app/languages/{.,themes,plugins}/*{.mo,.po}`) and deploy them to staging and production.
 
+From time to time, you might want to get rid of old translation files (plugins that were uninstalled, etc.) To do that, you must delete `web/app/languages` and follow _Extant projects_ hereunder.
+
 ## Extant projects
 
-To force-update translations for already installed packages, delete the contents of `web/app/plugins` (keep any `.gitkeep`) and run `composer install`
+To force-update translations for already installed packages, delete the contents of the following folders:
+
+- `web/wp`
+- `web/app/plugins`, except the file `web/app/plugins/.gitkeep`
+
+Run `composer update`.
 
 ## Credits
 
-This package was started by [Angry Creative](https://github.com/Angrycreative/composer-plugin-language-update), has been rewritten by [Bjørn Johansen](https://github.com/bjornjohansen/wplang) and integrates compatibility changes made by [Mirai](https://github.com/mirai-wordpress/wplang).
+This package was started by [Angry Creative](https://github.com/Angrycreative/composer-plugin-language-update), has been rewritten by [Bjørn Johansen](https://github.com/bjornjohansen/wplang), integrates compatibility changes made by [Mirai](https://github.com/mirai-wordpress/wplang) and was updated to support Composer v2.
