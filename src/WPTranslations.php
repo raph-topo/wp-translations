@@ -133,9 +133,7 @@ class WPTranslations implements PluginInterface, EventSubscriberInterface
      */
     public function postPackageInstall(PackageEvent $event)
     {
-        $package = $event->getOperation()->getPackage();
-
-        $this->getTranslations($package);
+        $this->getTranslations($event->getOperation()->getPackage());
     }
 
     /**
@@ -147,9 +145,7 @@ class WPTranslations implements PluginInterface, EventSubscriberInterface
      */
     public function postPackageUpdate(PackageEvent $event)
     {
-        $package = $event->getOperation()->getTargetPackage();
-
-        $this->getTranslations($package);
+        $this->getTranslations($event->getOperation()->getTargetPackage());
     }
 
     /**
