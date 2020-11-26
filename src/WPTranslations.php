@@ -73,21 +73,34 @@ class WPTranslations implements PluginInterface, EventSubscriberInterface
         $this->composer = $composer;
         $this->io = $io;
 
+        /**
+         * Check & parse `wordpress-translations`
+         * 
+         * Array of locales.
+         */
         try {
             $languages = $this->composer->getPackage()->getExtra()['wordpress-translations'];
-            $targetDir = $this->composer->getPackage()->getExtra()['wordpress-translations-dir'];
         } catch (\Exception $e) {
             
         }
-
-        if (empty($languages)) {
-            throw new \Exception('WP Translations requires \'wordpress-translations\' to be set: see Readme');
+        if (empty($languages) || ! is_array($languages)) {
+            throw new \Exception('WP Translations requires \'wordpress-translations\' to be set: see README');
         } else {
             $this->languages = $languages;
         }
 
-        if (empty($targetDir)) {
-            throw new \Exception('WP Translations requires \'wordpress-translations-dir\' to be set: see Readme');
+        /**
+         * Check & parse `wordpress-translations-dir`
+         * 
+         * Path to directory as string.
+         */
+        try {
+            $targetDir = $this->composer->getPackage()->getExtra()['wordpress-translations-dir'];
+        } catch (\Exception $e) {
+            
+        }
+        if (empty($targetDir) || ! is_string($targetDir)) {
+            throw new \Exception('WP Translations requires \'wordpress-translations-dir\' to be set: see README');
         } else {
             $this->wpLanguagesDir = dirname($composer->getConfig()->get('vendor-dir'))  . '/' . $targetDir;        
         }
