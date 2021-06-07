@@ -23,6 +23,6 @@
         "class": "RaphTopo\\WPTranslations\\WPTranslations"
     },
     "require-dev": {
-        "composer/composer": "^2.0"
+        "composer/composer": "^2.1"
     }
 }
