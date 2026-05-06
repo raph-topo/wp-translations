@@ -4,7 +4,7 @@
 ![Packagist Stars](https://img.shields.io/packagist/stars/raph-topo/wp-translations)
 ![Packagist Downloads](https://img.shields.io/packagist/dt/raph-topo/wp-translations)
 ![GitHub last commit](https://img.shields.io/github/last-commit/raph-topo/wp-translations)
-![PHP Composer](https://github.com/raph-topo/wp-translations/workflows/PHP%20Composer/badge.svg?branch=master)
+![PHP Composer](https://github.com/raph-topo/wp-translations/workflows/PHP%20Composer/badge.svg?branch=main)
 ![GitHub issues](https://img.shields.io/github/issues/raph-topo/wp-translations)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/raph-topo/wp-translations)
 ![License](https://img.shields.io/github/license/raph-topo/wp-translations)
